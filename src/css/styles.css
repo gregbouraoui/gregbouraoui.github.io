@@ -1,0 +1,705 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 26; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== Button Dark/Light ==========*/
+
+
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: center;
+  margin: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1000px;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  padding-top: 64px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+/*==================== LAYOUT ====================*/
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+/*==================== NAV ====================*/
+.nav__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 0;
+}
+
+.nav__banner {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 rgba(0, 0, 0, 0.1);
+  margin-right: auto;
+  padding-left: 50px;
+}
+
+.nav__item {
+  margin-right: 1rem;
+}
+
+.nav__link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--first-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav__link:hover::before {
+  transform: scaleX(1);
+}
+
+.nav__link.active::before {
+  transform: scaleX(1);
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 70px;
+  background-color: var(--first-color);
+  animation: move 3s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(calc(100vw - 50px));
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar__logo {
+      animation: none;
+  }
+}
+
+/*==================== HOME ====================*/
+/* .home__container{
+  -template-columns: .5fr 3fr;
+  padding-top: 3.5rem;
+  align-items: center;
+} */
+
+.home__social{
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+}
+
+.home__social-icon{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.home__social-icon:hover{
+  color: var(--first-color-alt);
+}
+
+.home__blob{
+  width:200px;
+  fill: var(--first-color); 
+}
+
+.home__blob-img{
+  width: 210px;
+}
+
+.home__data{
+  grid-column: 1/3;
+}
+
+.home__title{
+  font-size: var(--big-font-size);
+}
+
+.home__subtitle{
+  margin-bottom: var(--mb-0-75);
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+}
+
+.home__description{
+  margin-bottom: var(--mb-2);
+}
+
+.home__scroll{
+  display: none;
+}
+
+.home__scroll-button{
+  color: var(--first-color);
+  transition: .3s;
+}
+
+.home__scroll-button:hover{
+  transform: translateY(0.25rem);
+}
+
+.home__sroll-mouse{
+  font-size:2rem;
+}
+
+.home__scroll-name{
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-right:var(--mb-0-25);
+}
+
+.home__scroll-arrow{
+  font-size: 1.25rem;
+}
+
+.home__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+/*==================== BUTTONS ====================*/
+
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+}
+
+.button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button__icon{
+  font-size: 1.25rem;
+  margin-left: var(--mb-0-5);
+  transition: .3s
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+}
+
+.button--small{
+  padding: .75rem 1.5rem;
+}
+
+.button--link{
+  padding: 0;
+  background-color: transparent;
+  color: var(--first-color);
+}
+
+.button--link:hover{
+  color:var(--first-color-alt)
+}
+/*==================== ABOUT ====================*/
+.about__img{
+  width: 200px;
+  border-radius: 2.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.about__description{
+  text-align: center;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title{
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+.about__info-name{
+  font-size: var(--smaller-font-size);
+}
+
+.about__info-title,
+.about__info-name{
+  display: block;
+  text-align: center;
+}
+
+.about__buttons{
+  display: flex;
+  /*justify-content: center;*/
+}
+
+.about__button:hover .button__icon{
+  transform: scale(1.2);
+}
+/*==================== SKILLS ====================*/
+
+
+/*==================== QUALIFICATION ====================*/
+.timeline__tabs{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2);
+}
+
+.timeline__button{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.timeline__button:hover{
+  color: var(--first-color);
+}
+
+.timeline__icon{
+  font-size:1.8rem;
+  margin-right: var(--mb-0-25);
+}
+
+.timeline__data{
+  display:grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.timeline__title{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.timeline__subtitle{
+  display:inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.timeline__calendar{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.timeline__rounder{
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-bottom: 50%;
+}
+
+.timeline__line{
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(6px,-7px);
+}
+
+.timeline [data-content]{
+  display: none;
+}
+
+.timeline__active[data-content]{
+  display: block;
+}
+
+.timeline__button.timeline__active{
+  color: var(--first-color);
+}
+
+
+/*==================== SERVICES ====================*/
+.services__container{
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.services__content{
+  position: relative;
+  background-color: var(--container-color);
+  padding: 3.5rem .5rem 1.25rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: .3s;
+}
+
+.services__content:hover{
+  box-shadow: 0 4pc 8px rgba(0, 0, 0, 0.15);
+}
+
+.services__icon{
+  display:block;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-bottom: var(--mb-1)2;
+}
+
+.services__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  font-weight: var(--font-medium);
+}
+
+.services__button{
+  cursor: pointer;
+  font-size: var(--small-font-size);
+}
+
+.services__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.services__modal{
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.services__modal-content{
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.services__modal-services{
+  row-gap: 1rem;
+}
+
+.services__modal-service{
+  display: flex;
+}
+
+.services__modal-title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1-5);
+}
+
+.sercies__modal-close{
+  position:absolute;
+  top: 1rem;
+  right:1rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor:pointer;
+}
+
+.services__modal-icon{
+  color:var(--first-color);
+  margin-right: var(--mb-0-25);
+}
+/* Active Modal */
+.active__modal{
+  opacity: 1;
+  visibility: visible;
+}
+
+/*==================== PORTFOLIO ====================*/
+.portfolio__container{
+  overflow:initial;
+  
+}
+
+.portfolio__content{
+  padding: 0 1.5rem;
+  
+}
+
+.portfolio__img{
+  width: 350px;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+.portfolio__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description{
+  margin-bottom: var(--mb-0-75);
+}
+
+
+.portfolio__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  content: '';
+}
+
+.swiper-portfolio-icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.swiper-button-prev{
+  left:-.5rem;
+}
+
+.swiper-button-next{
+  right:-.5rem;
+}
+
+/*==================== PROJECT IN MIND ====================*/
+
+
+/*==================== TESTIMONIAL ====================*/
+
+
+/*==================== CONTACT ME ====================*/
+.contact__information{
+  display: flex;
+  margin-bottom: var(--mb-2);
+}
+
+.contact__icon{
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.contact__title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact__content{
+  background-color:var(--input-color);
+  border-radius: .5rem;
+  padding: .75rem 1rem .25rem;
+}
+
+.contact__label{
+  font-size: var(--smaller-font-size);
+  color:var(--title-color)
+}
+.contact__input{
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  outline: none;
+  padding: .25rem .5rem .5rem 0
+}
+/*==================== FOOTER ====================*/
+
+
+/*========== SCROLL UP ==========*/
+
+
+/* Show scroll */
+
+
+/*========== SCROLL BAR ==========*/
+
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
