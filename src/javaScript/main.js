@@ -1,58 +1,22 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById('nav-menu'),
-    navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close')
-
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
-}
-
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
+/*==================== toggle icon navbar ====================*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+/*==================== scroll sections active link ====================*/
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== ACCORDION SKILLS ====================*/
+window.onscroll = () => {
 
 
-/*==================== QUALIFICATION TABS ====================*/
+    /*==================== sticky navbar ====================*/
+
+    /*==================== remove toggle icon and navbar when click navbar link (scroll) ====================*/
+};
 
 
-/*==================== SERVICES MODAL ====================*/
+/*==================== scroll reveal ====================*/
 
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-
-
-/*==================== TESTIMONIAL ====================*/
-
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
-
-
-/*==================== SHOW SCROLL UP ====================*/ 
-
-
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== typed js ====================*/
