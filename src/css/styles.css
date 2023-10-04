@@ -301,7 +301,7 @@ img {
 }
 
 .home__scroll{
-  /*display: none; */
+  display: none;
 }
 
 .home__scroll-buttom{
@@ -310,7 +310,7 @@ img {
 }
 
 .home__scroll-buttom:hover{
-  transform: translateY(.25rem);
+  transform: translateY(0.25rem);
 }
 
 .home__scroll-mouse{
