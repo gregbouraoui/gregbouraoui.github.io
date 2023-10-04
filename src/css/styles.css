@@ -166,7 +166,7 @@ img {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
-  align-items: middle;
+  align-items: center;
 
 }
 
@@ -398,6 +398,13 @@ img {
   display: block;
   text-align: center;
 }
+
+.about_buttons{
+  display: flex;
+  justify-content: center;
+}
+
+
 
 /*==================== SKILLS ====================*/
 
