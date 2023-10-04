@@ -88,11 +88,13 @@ html {
 }
 
 body {
+  max-width: 1000px;
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  padding-top: 64px;
 }
 
 h1, h2, h3, h4 {
@@ -136,7 +138,7 @@ img {
 
 /*==================== LAYOUT ====================*/
 .container {
-  max-width: 768px;
+  max-width: 1000px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
 }
@@ -157,11 +159,14 @@ img {
 
 /*==================== NAV ====================*/
 .nav{
-  max-width: 986px;
+  max-width: 1000px;
+  position: fixed;
+  top: 50%;
+  right: 0;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: middle;
 
 }
 
