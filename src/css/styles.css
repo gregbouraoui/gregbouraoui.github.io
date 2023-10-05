@@ -380,13 +380,13 @@ span {
 
 /* BREAKPOIONTS */
 
-@media (max-width: 1200px){
+@media (max-width: 1800px){
   html {
     font-size: 55%;
   }
 }
 
-@media (max-width: 991px){
+@media (max-width: 1400px){
   .header{
     padding: 2rem 3%;
   }
@@ -408,7 +408,7 @@ span {
   }
 }
 
-@media (max-width: 963px){
+@media (max-width: 1200px){
   #menu-icon {
     display: block;
   }
@@ -436,20 +436,35 @@ span {
   }
 
   .home {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .home-content {
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 5rem;
   }
 
   .home-content h3 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
   }
 
   .home-content h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 2.5rem;
   }
 
   .home-img {
-    width: 70vw;
-    margin-top: 4rem;
+    width: 45%;
   }
 
   .about {
@@ -457,7 +472,9 @@ span {
   }
 
   .about img {
-    width: 70vw;
+    width: 40vw;
+    height: 50vw;
+
     margin-top: 4rem;
   }
 
@@ -475,4 +492,7 @@ span {
 
 }
 /* MAX WIDTH 617 */
+@media (max-width: 617px) {
+
+}
 /* MAX WIDTH 450 */
