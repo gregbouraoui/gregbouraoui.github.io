@@ -150,8 +150,8 @@ span {
   background: var(--second--bg-color);
 }
 
-,about-img img {
-  width: 35vw;
+.about-img img {
+  height: 30vw;
 }
 
 .heading {
@@ -194,6 +194,10 @@ span {
   border: .2rem solid var(--bg-color);
 }
 
+.services-container .services-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);
+}
 .services-container .services-box a {
   font-size: 1.75rem;
 }
