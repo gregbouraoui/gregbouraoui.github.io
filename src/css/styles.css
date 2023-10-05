@@ -60,7 +60,7 @@ section {
   transition: .3s;
 }
 
-.navbar s:hover,
+.navbar a:hover,
 .navbar a.active {
   color: var(--main-color);
 }
@@ -116,7 +116,7 @@ span {
   border-radius: 50%;
   font-size: 2rem;
   color: var(--main-color);
-  margin: 4rem 2rem 3rem 0;
+  margin: 3rem 1.5rem 3rem 0;
 }
 
 .social-media a:hover {
