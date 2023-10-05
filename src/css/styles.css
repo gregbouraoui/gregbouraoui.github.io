@@ -82,7 +82,10 @@ section {
 }
 
 .home-img img {
-  width: 35vw;
+  width: 30vw;
+  margin-left: 20rem;
+  border-radius: 100%;
+  box-shadow: 0 0 3rem var(--main-color);
 }
 
 .home-content h3 {
@@ -149,12 +152,15 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 5rem;
   background: var(--second--bg-color);
 }
 
 .about-img img {
   height: 30vw;
+  border-radius: 100%;
+  box-shadow: 0 0 2rem var(--main-color);
+
 }
 
 .heading {
@@ -171,6 +177,9 @@ span {
   font-size: 2.6rem;
 }
 
+.about-content h5 {
+  font-size: 2.3rem;
+}
 .about-content p {
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
@@ -248,26 +257,28 @@ span {
 .portfolio-container .portfolio-box {
   position: relative;
   border-radius: 2rem;
-  box-shadow: 0 0 1rem var(--bg-color);
+  box-shadow: 0 0 1rem var(--text-color);
   overflow: hidden;
   display: flex;
 }
 
 .portfolio-box img {
   width: 100%;
+  height: 250px;
   transition: .5s ease;
 }
 
 .portfolio-box:hover img {
   transform: scale(1.1);
 }
+
 .portfolio-box .portfolio-layer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,.1), var(--main-color));
+  background: linear-gradient(rgba(0,0,0,.85), var(--bg-color));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,18 +391,18 @@ span {
 
 /* BREAKPOIONTS */
 
-@media (max-width: 1200px){
+@media (max-width: 1800px){
   html {
     font-size: 55%;
   }
 }
 
-@media (max-width: 991px){
+@media (max-width: 1400px){
   .header{
     padding: 2rem 3%;
   }
 
-  section {
+  .section {
     padding: 10rem 3% 2rem;
   }
 
@@ -408,7 +419,7 @@ span {
   }
 }
 
-@media (max-width: 963px){
+@media (max-width: 1200px){
   #menu-icon {
     display: block;
   }
@@ -436,20 +447,35 @@ span {
   }
 
   .home {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .home-content {
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 5rem;
   }
 
   .home-content h3 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
   }
 
   .home-content h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 2.5rem;
   }
 
   .home-img {
-    width: 70vw;
-    margin-top: 4rem;
+    width: 55%;
   }
 
   .about {
@@ -457,8 +483,10 @@ span {
   }
 
   .about img {
-    width: 70vw;
-    margin-top: 4rem;
+    width: 35vw;
+    height: 45vw;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
   }
 
   .services h2 {
@@ -474,5 +502,125 @@ span {
   }
 
 }
-/* MAX WIDTH 617 */
-/* MAX WIDTH 450 */
+
+@media (max-width: 1050px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: .1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .home {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .home-content {
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    font-size: 1.9rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+  }
+
+  .home-img {
+    scale: .9;
+    width: 45%;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about img {
+    width: 40vw;
+    height: 50vw;
+
+    margin-top: 4rem;
+  }
+
+  .services h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .home-content h1,
+  .home-content h3 {
+    order: 2;
+    text-align: center;
+  }
+
+  .home-img {
+    order: 1;
+    margin-top: 2rem;
+    align-self: center;
+  }
+
+  .home-content {
+    text-align: center;
+    order: 2;
+    flex: 1;
+    padding: 0 1rem;
+    padding-right: 10px;
+  }
+
+  .home-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    align-self: center;
+    font-size: 2rem;
+  }
+
+}
